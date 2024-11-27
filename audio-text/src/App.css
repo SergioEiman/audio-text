@@ -1,0 +1,209 @@
+/* General styles */
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.App {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Header */
+h1 {
+  font-size: 2.5rem;
+  color: #4a90e2;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 30px;
+}
+
+/* Recorder section */
+.recorder-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-button,
+.stop-button {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-button:hover,
+.stop-button:hover {
+  background-color: #357abd;
+}
+
+.start-button:active,
+.stop-button:active {
+  background-color: #2b5f92;
+}
+
+.recording-timer {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+.recording-waveform {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.wave {
+  background-color: #4a90e2;
+  width: 6px;
+  height: 20px;
+  margin: 0 4px;
+  animation: wave-animation 0.8s infinite ease-in-out;
+}
+
+.wave:nth-child(even) {
+  animation-delay: 0.4s;
+}
+
+@keyframes wave-animation {
+  0% {
+    height: 20px;
+  }
+  50% {
+    height: 40px;
+  }
+  100% {
+    height: 20px;
+  }
+}
+
+/* Recordings list */
+.recordings {
+  margin-top: 20px;
+}
+
+.recording-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f1f1f1;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.recording-item audio {
+  flex-grow: 1;
+  margin-right: 15px;
+}
+
+.recording-item button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.recording-item button:hover {
+  background-color: #218838;
+}
+
+.recording-item button:active {
+  background-color: #1e7e34;
+}
+
+/* Transcription box */
+.transcription {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.transcription textarea {
+  width: 100%;
+  height: 120px;
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 16px;
+  font-family: "Roboto", Arial, sans-serif;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: none;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  background-color: #f9f9f9;
+}
+
+.transcription textarea:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+.transcription h2 {
+  margin-bottom: 10px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .App {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .recording-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .recording-item audio {
+    margin-bottom: 10px;
+  }
+}
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.delete-button:active {
+  background-color: #bd2130;
+}
