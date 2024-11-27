@@ -59,34 +59,11 @@ function App() {
       }
   
       const formData = new FormData();
-      formData.append("file", recording.blob, recording.name); // Correctly add Blob with name
+      formData.append("file", recording.blob, recording.name); 
       formData.append("language", "english");
       formData.append("response_format", "json");
   
-      console.log("FormData keys:", Array.from(formData.entries())); // Debugging
-
-      // const response = await axios.post(
-      //   "https://us-central1-ss-audio-to-text-transcribe.cloudfunctions.net/api/transcribe", 
-      //   formData, 
-      //   {
-      //     headers: {
-      //       "Content-Type": "multipart/form-data", // Let axios handle boundary
-      //     },
-      //   }
-      // );
-      
-
-      // const response = await axios.post("http://127.0.0.1:5001/ss-audio-to-text-transcribe/us-central1/api/transcribe", formData, {
-      //   headers: {
-      //     "Content-Type": "multipart/form-data", // Correct content-type
-      //   },
-      // });
-  
-      // const response = await fetch("http://127.0.0.1:5001/ss-audio-to-text-transcribe/us-central1/api/transcribe", {
-      //   method: "POST",
-      //   body: formData,
-      // });
-
+      console.log("FormData keys:", Array.from(formData.entries())); 
           const response = await fetch("http://localhost:3001/transcribe", {
         method: "POST",
         body: formData,
