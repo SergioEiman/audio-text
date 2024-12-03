@@ -14,7 +14,10 @@ const openai = new OpenAI({
 
 app.use(cors({ origin: "*", methods: ["GET", "POST"] }));
 
-const upload = multer({ dest: "uploads/" });
+// const upload = multer({ dest: "uploads/" });
+
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
