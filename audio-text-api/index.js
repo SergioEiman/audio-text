@@ -5,16 +5,18 @@ const fs = require("fs");
 const OpenAI = require("openai");
 
 const app = express();
-const port = 3001;
+const port = 3000;
 
 const openai = new OpenAI({
-  apiKey: process.env.LEMONFOX_API_KEY,
+  apiKey: 'UQo1fTmlVnl63YjerFzbDdJHgYPrCm6N',
   baseURL: "https://api.lemonfox.ai/v1", 
 });
 
 app.use(cors({ origin: "*", methods: ["GET", "POST"] }));
 
 const upload = multer({ dest: "uploads/" });
+
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
 app.post("/transcribe", upload.single("file"), async (req, res) => {
   if (!req.file) {
@@ -53,3 +55,5 @@ app.post("/transcribe", upload.single("file"), async (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
+
+module.exports = app;
